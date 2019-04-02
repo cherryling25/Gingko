@@ -6,7 +6,6 @@
 	<style>
     body{
       padding-top: 70px;
-    
     }
 
     .navbar-brand{
@@ -14,10 +13,10 @@
     }
     </style>
 
-	<link rel="stylesheet" href="public/bs/css/bootstrap.min.css">
-	<script src="public/bs/js/jquery-3.3.1.js"></script>
-  <script src="public/bs/js/bootstrap.min.js"></script>
-  <script src="public/bs/js/docs.min.js"></script>
+	<link rel="stylesheet" href="../public/bs/css/bootstrap.min.css">
+	<script src="../public/bs/js/jquery-3.3.1.js"></script>
+  <script src="../public/bs/js/bootstrap.min.js"></script>
+  <script src="../public/bs/js/docs.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -30,7 +29,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">酒仙网后台</a>
+      <a class="navbar-brand" href="../admin.html">酒仙网后台</a>
     </div>
 
     
@@ -43,7 +42,7 @@
             <li class="divider"></li>
             <li><a href="#myModal"  data-toggle="modal">修改密码</a></li>
             <li class="divider"></li>
-            <li><a href="login.html">退出系统</a></li>
+            <li><a href="#">退出系统</a></li>
           </ul>
         </li>
       </ul>
@@ -93,8 +92,8 @@
         </div>
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="list-group">
-              <a href="user/look.html" class="list-group-item">会员查看</a>
-              <a href="user/add.html" class="list-group-item">会员添加</a>
+              <a href="look.html" class="list-group-item">会员查看</a>
+              <a href="" class="list-group-item">会员添加</a>
               <a href="" class="list-group-item">会员修改</a>
               <a href="" class="list-group-item">会员删除</a>
             </div>
@@ -212,17 +211,24 @@
   </div>
   <!--右侧设计-->
   <div class="col-md-10">
-      <div class="thumbnail">
-          <img src="holder.js/100%x300">
-          <div class="caption">
-            <h3>酒仙网后台信息：</h3>
-            <p>联系方式：</p>
-            <p>
-              <a href="../websiteProspects/index.html" target="_blank" class="btn btn-primary" role="button">网站首页</a> 
-              <a href="login.html" class="btn btn-default" role="button">退出系统</a>
-            </p>
-          </div>
-        </div> 
+     <form action="">
+        <div class="form-group">
+            <label>用户名：</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>密码：</label>
+            <input type="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>确认密码：</label>
+            <input type="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="add" class="btn btn-primary">
+            <input type="reset" value="cancel" class="btn btn-default">
+        </div>
+     </form>
   </div>
 </div>
 
