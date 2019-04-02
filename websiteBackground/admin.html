@@ -7,6 +7,11 @@
     * {
       
     }
+
+    body{
+      padding-top: 70px;
+    }
+
     .navbar-brand{
     	color: black!important;
     }
@@ -14,7 +19,8 @@
 
 	<link rel="stylesheet" href="public/bs/css/bootstrap.min.css">
 	<script src="public/bs/js/jquery-3.3.1.js"></script>
-	<script src="public/bs/js/bootstrap.min.js"></script>
+  <script src="public/bs/js/bootstrap.min.js"></script>
+  <script src="public/bs/js/holder.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -47,6 +53,144 @@
     </div>
   </div>
 </nav>
+
+<div class="row">
+  <div class="col-md-2">
+  
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-primary">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+             会员管理
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="list-group">
+              <a href="" class="list-group-item">会员查看</a>
+              <a href="" class="list-group-item">会员添加</a>
+              <a href="" class="list-group-item">会员修改</a>
+              <a href="" class="list-group-item">会员删除</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              广告管理
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="list-group">
+            <a href="" class="list-group-item">广告查看</a>
+            <a href="" class="list-group-item">广告添加</a>
+            <a href="" class="list-group-item">广告修改</a>
+            <a href="" class="list-group-item">广告删除</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+             分类管理
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="list-group">
+            <a href="" class="list-group-item">分类查看</a>
+            <a href="" class="list-group-item">分类添加</a>
+            <a href="" class="list-group-item">分类修改</a>
+            <a href="" class="list-group-item">分类删除</a>
+          </div>
+        </div>
+      </div>
+      <!--品牌管理-->
+        <div class="panel panel-primary">
+          <div class="panel-heading" role="tab" id="heading4">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapseThree">
+                  品牌管理
+              </a>
+            </h4>
+          </div>
+          <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="list-group">
+              <a href="" class="list-group-item">品牌查看</a>
+              <a href="" class="list-group-item">品牌添加</a>
+              <a href="" class="list-group-item">品牌修改</a>
+              <a href="" class="list-group-item">品牌删除</a>
+            </div>
+          </div>
+        </div>
+      <!--商品管理-->
+        <div class="panel panel-primary">
+          <div class="panel-heading" role="tab" id="heading5">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapseThree">
+                商品管理
+              </a>
+            </h4>
+          </div>
+          <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="list-group">
+              <a href="" class="list-group-item">商品查看</a>
+              <a href="" class="list-group-item">商品添加</a>
+              <a href="" class="list-group-item">商品修改</a>
+              <a href="" class="list-group-item">商品删除</a>
+            </div>
+          </div>
+        </div>
+      <!--评论管理-->
+        <div class="panel panel-primary">
+          <div class="panel-heading" role="tab" id="heading6">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapseThree">
+                评论管理
+              </a>
+            </h4>
+          </div>
+          <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="list-group">
+              <a href="" class="list-group-item">评论查看</a>
+              <a href="" class="list-group-item">评论添加</a>
+              <a href="" class="list-group-item">评论修改</a>
+              <a href="" class="list-group-item">评论删除</a>
+            </div>
+          </div>
+        </div>
+      <!--订单管理-->
+        <div class="panel panel-primary">
+          <div class="panel-heading" role="tab" id="heading7">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapseThree">
+                订单管理
+              </a>
+            </h4>
+          </div>
+          <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="list-group">
+              <a href="" class="list-group-item">订单查看</a>
+              <a href="" class="list-group-item">订单添加</a>
+              <a href="" class="list-group-item">订单修改</a>
+              <a href="" class="list-group-item">订单删除</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!--右侧设计-->
+  <div class="col-md-10">
+    
+  </div>
+</div>
+
 	</div>
 </body>
 <script>
