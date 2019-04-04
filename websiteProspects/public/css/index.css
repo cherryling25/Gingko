@@ -213,7 +213,7 @@ body{
 .ppt .div3{
     width: 190px;
     height: 470px;
-    background: #b61d1d;
+    background: #fff;
 }
 .ppt .div3 ul{
    
@@ -221,13 +221,13 @@ body{
 
 }
 .ppt .div3 ul li{
-
    padding-left: 15px;
    line-height: 30px;
+   border-bottom: 1px solid #ccc;
 }
 
 .ppt .div3 ul li span{
-   color: white; 
+   color: #333; 
 }
 
 .ppt .div3 ul li:hover{
@@ -308,7 +308,6 @@ body{
     right: -29px;
     width: 190px;
     height: 470px;
-    /*overflow: hidden;*/
 }
 
 .right-adv .img{
@@ -316,10 +315,16 @@ body{
     display: none;
 }
 
-.right-adv .img:last-child{
-    margin-bottom: 0px;
-}
-
 .right-adv img{
     display: block;
+}
+
+.nav1{
+    width: 14px;
+    height: 20px;
+    display: inline-block;
+    background: #f00;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: url("../images/public-24.png") -73px -260px;
 }

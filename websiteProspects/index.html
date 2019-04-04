@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="public/css/index.css">
     <script src="../public/js/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="../public/bs/css/bootstrap.min.css">
+    <script src="public/js/index.js"></script>
 </head>
 <body>
    <div class="top">
+       <!--顶部-->
        <div class="main">
            <div class="left">
                 <span>欢迎来到Gingko！</span>
@@ -38,10 +40,12 @@
                 <span class="ceo">999-999-9999</span>
             </div>
        </div>
+       <!--顶部图片-->
        <div class="banner1">
             <img src="public/images/header.jpg">
         </div>
 
+        <!--搜索框一行-->
         <div class="header">
             <div class="main">
                 <div class="logo">
@@ -83,6 +87,7 @@
     <!--幻灯片-->
     <div class="ppt">
         <div class="main">
+            <!--幻灯片顶部-->
             <div class="div1">
                 <ul>
                     <li class="banner">全部商品分类</li>
@@ -97,14 +102,13 @@
                     <li>CLUB</li>
                 </ul>
             </div>
-    
+            <!--幻灯片左侧导航-->
             <div class="menu">
                 <div class="div2">
-                    <!--左侧导航-->
                     <div class="div3">
                         <ul>
                             <li>
-                                <span>一键选择</span>
+                                <span><i class="nav1"></i>一键选择</span>
                                 <div class="right">
                                     <h3>家用电器</h3>
                                     <p>家用电器,家用电器,家用电器,家用电器,家用电器
@@ -154,6 +158,7 @@
         </div>
     </div>
 
+    <!--幻灯片-->
     <div class="main">
         <div class="carousel">
             <div class="window">
@@ -181,6 +186,7 @@
                 <a href="#" rel="2">2</a>
                 <a href="#" rel="3">3</a>
             </div>
+            <!--幻灯片右侧图片-->
             <div class="right-adv">
                 <div class="img 1">
                     <img src="public/images/lafei.png">
@@ -243,130 +249,8 @@
         <h1>19</h1>
         <h1>20</h1>
     </div>
+   </div><!--top-->
 
 
-   </div>
 </body>
-<script>
- $(".main .right .pingtai").mouseenter(function(){
-    //$(this).find(".my").css({"transform":"rotate(180deg)"});
-    $(this).css({"background":"white"});
-    $(this).next().show();
- });
-
- $(".main .right .pingtai").mouseleave(function(){
-    $(this).css({"background":"#f2f2f2"});
-    $(this).next().hide();
- });
-
- $(".div3 li").mouseenter(function() {
-        $(this).css({"background":"#eee"});
-        $(this).find("span").css({"color":"#b61d1d"});
-        $(".div3 li").not($(this)).css({"background":"#b61d1d"});
-
-        $(this).find(".right").show();
-        $(".right").not($(this).find(".right")).hide();
-    });
-     $(".div3 li").mouseleave(function() {
-         $(this).find(".right").hide();
-         $(this).find("span").css({"color":"#fff"});
-         $(this).css({"background":"#b61d1d"});
-     });
-
-//幻灯片
-$(".paging").show();
-    	$(".paging a:first").addClass("active");
-        num = $(".paging a:first").attr("rel");
-        arr=[1,2,3,4,5,6,7,8,9];
-        imgs=arr.slice((num-1)*3,num*3);
-
-        for (i = 0; i < imgs.length; i++) {
-            $("."+imgs[i]).show();
-            
-        }
-    	//获取图像的大小,有多少图像，然后确定图像的大小
-    	  //调整图像新的大小
-        var imageWidth = $(".window").width();
-        var imageSum = $(".image_reel img").length;   
-        var imageReelWidth = imageWidth * imageSum;
-        $(".image_reel").css({ "width":imageReelWidth});
-
-        var pageSize = $(".paging a").length;
-
-        //分页和滑动
-        rotate = function(end){
-            if(end) {
-                $active = $(".paging a:first");
-                $(".paging a").removeClass("active");
-                $active.addClass("active");
-                $(".image_reel").animate({ 
-                    left: -pageSize * imageWidth 
-                    }, 1000,function () {
-                        $(".image_reel").css({'left':'0px'});
-                    }
-                );
-                
-            } else {
-                var triggerID = $active.attr("rel")-1;
-                var image_reelPosition = triggerID*imageWidth;
-
-                $(".paging a").removeClass("active");   //删除所有active类
-                $active.addClass("active");
-                
-                $(".image_reel").animate({  //滑动动画
-                    left: -image_reelPosition 
-                }, 500);
-            }
-
-           act= $(".paging a.active").attr("rel");
-
-           imgs=arr.slice((act-1)*3,act*3);
-            for (i = 0; i < imgs.length; i++) {
-                $("."+imgs[i]).show();
-                
-            }
-        };
-
-        //定时时间
-        rotateSwitch = function() {
-            play = setInterval(function() { //这个总过程每隔7秒重复一次
-            $(".img").hide();
-                $active = $(".paging a.active").next(); //移动到下一个分页
-                var rel = $active.attr("rel");
-                var end = false;
-                if(!rel) {
-                    end = true;
-                }
-                rotate(end);     //触发分页和滑块函数
-            }, 2000);   //每隔分页停留的定时器速度
-        };
-
-        rotateSwitch();
-
-        //On Click
-        $(".paging a").click(function() {
-            
-            $(".img").hide();
-           $active = $(this);
-           act= $(this).attr("rel");
-
-            imgs=arr.slice((act-1)*3,act*3);
-            for (i = 0; i < imgs.length; i++) {
-                $("."+imgs[i]).show();
-                
-            }
-
-           clearInterval(play);     //动画立即停止
-           rotate();        //立即触发rotate函数
-           rotateSwitch();  //重新开始rotateSwitch方法
-           return false;    //以防定时器是a链接，浏览器会跳转到链接
-        });
-
-        //On hover
-        $(".image_reel a").hover(function() {
-            clearInterval(play);    //鼠标移进，停止play方法
-        }, function() {
-            rotateSwitch();     //  鼠标移走，重新开始rotateSwitch方法
-        });
-</script>
 </html>
