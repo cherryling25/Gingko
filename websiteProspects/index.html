@@ -5,6 +5,7 @@
     <title>home page</title>
     <link rel="stylesheet" href="public/css/index.css">
     <script src="../public/js/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="../public/bs/css/bootstrap.min.css">
 </head>
 <body>
    <div class="top">
@@ -151,6 +152,51 @@
             </div>
         </div>
     </div>
+
+    <div class="main">
+        <div class="carousel">
+            <div class="window">
+                <div class="image_reel">
+                    <a href="#"><img src="public/images/1.jpg"></a>
+                    <a href="#"><img src="public/images/2.jpg"></a>
+                    <a href="#"><img src="public/images/3.jpg"></a>
+                    <a href="#"><img src="public/images/66.jpg"></a>
+                    <a href="#"><img src="public/images/1.jpg"></a>
+                </div>
+            </div>
+            <div class="paging">
+                <a href="#" rel="1">1</a>
+                <a href="#" rel="2">2</a>
+                <a href="#" rel="3">3</a>
+                <a href="#" rel="4">4</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main">
+        <h1>01</h1>
+        <h1>02</h1>
+        <h1>03</h1>
+        <h1>04</h1>
+        <h1>05</h1>
+        <h1>06</h1>
+        <h1>07</h1>
+        <h1>08</h1>
+        <h1>09</h1>
+        <h1>10</h1>
+        <h1>11</h1>
+        <h1>12</h1>
+        <h1>13</h1>
+        <h1>14</h1>
+        <h1>15</h1>
+        <h1>16</h1>
+        <h1>17</h1>
+        <h1>18</h1>
+        <h1>19</h1>
+        <h1>20</h1>
+    </div>
+
+
    </div>
 </body>
 <script>
@@ -164,5 +210,89 @@
     $(this).css({"background":"#f2f2f2"});
     $(this).next().hide();
  });
+
+ $(".div3 li").mouseenter(function() {
+        $(this).css({"background":"#eee"});
+        $(this).find("span").css({"color":"#b61d1d"});
+        $(".div3 li").not($(this)).css({"background":"#b61d1d"});
+
+        $(this).find(".right").show();
+        $(".right").not($(this).find(".right")).hide();
+    });
+     $(".div3 li").mouseleave(function() {
+         $(this).find(".right").hide();
+         $(this).find("span").css({"color":"#fff"});
+         $(this).css({"background":"#b61d1d"});
+     });
+
+//幻灯片
+$(".paging").show();
+    	$(".paging a:first").addClass("active");
+
+    	//获取图像的大小,有多少图像，然后确定图像的大小
+    	  //调整图像新的大小
+        var imageWidth = $(".window").width();
+        var imageSum = $(".image_reel img").length;   
+        var imageReelWidth = imageWidth * imageSum;
+        $(".image_reel").css({ "width":imageReelWidth});
+
+        var pageSize = $(".paging a").length;
+
+        //分页和滑动
+        rotate = function(end){
+            if(end) {
+                $active = $(".paging a:first");
+                $(".paging a").removeClass("active");
+                $active.addClass("active");
+                $(".image_reel").animate({ 
+                    left: -pageSize * imageWidth 
+                    }, 1000,function () {
+                        $(".image_reel").css({'left':'0px'});
+                    }
+                );
+                
+            } else {
+                var triggerID = $active.attr("rel")-1;
+                var image_reelPosition = triggerID*imageWidth;
+
+                $(".paging a").removeClass("active");   //删除所有active类
+                $active.addClass("active");
+                
+                $(".image_reel").animate({  //滑动动画
+                    left: -image_reelPosition 
+                }, 500);
+            }
+        };
+
+        //定时时间
+        rotateSwitch = function() {
+            play = setInterval(function() { //这个总过程每隔7秒重复一次
+                $active = $(".paging a.active").next(); //移动到下一个分页
+                var rel = $active.attr("rel");
+                var end = false;
+                if(!rel) {
+                    end = true;
+                }
+                rotate(end);     //触发分页和滑块函数
+            }, 2000);   //每隔分页停留的定时器速度
+        };
+
+        rotateSwitch();
+
+        //On Click
+        $(".paging a").click(function() {
+           $active = $(this);
+           clearInterval(play);     //动画立即停止
+           rotate();        //立即触发rotate函数
+           rotateSwitch();  //重新开始rotateSwitch方法
+           return false;    //以防定时器是a链接，浏览器会跳转到链接
+        });
+
+        //On hover
+        $(".image_reel a").hover(function() {
+            clearInterval(play);    //鼠标移进，停止play方法
+        }, function() {
+            rotateSwitch();     //  鼠标移走，重新开始rotateSwitch方法
+        });
 </script>
 </html>
