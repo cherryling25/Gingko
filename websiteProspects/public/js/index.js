@@ -1,29 +1,26 @@
   $(function(){
 
   /*顶部-我的平台*/
-   $(".main .right .pingtai").mouseenter(function(){
+   $(".main .right1 .pingtai").mouseenter(function(){
     //$(this).find(".my").css({"transform":"rotate(180deg)"});
     $(this).css({"background":"white"});
     $(this).next().show();
  });
 
- $(".main .right .pingtai").mouseleave(function(){
+ $(".main .right1 .pingtai").mouseleave(function(){
     $(this).css({"background":"#f2f2f2"});
     $(this).next().hide();
  });
 /*幻灯片左侧导航*/
- $(".div3 li").mouseenter(function() {
+ $(".div3 .menu2").mouseenter(function() {
         $(this).css({"background":"#eee"});
-        $(this).find("span").css({"color":"#b61d1d"});
-        $(".div3 li").not($(this)).css({"background":"#b61d1d"});
 
         $(this).find(".right").show();
         $(".right").not($(this).find(".right")).hide();
     });
-     $(".div3 li").mouseleave(function() {
+     $(".div3 .menu2").mouseleave(function() {
          $(this).find(".right").hide();
-         $(this).find("span").css({"color":"#fff"});
-         $(this).css({"background":"#b61d1d"});
+         $(this).css({"background":"#fff"});
      });
 
 //幻灯片
