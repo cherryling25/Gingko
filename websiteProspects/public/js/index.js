@@ -40,6 +40,7 @@ $(".paging").show();
     	//获取图像的大小,有多少图像，然后确定图像的大小
     	  //调整图像新的大小
         var imageWidth = $(".window").width();
+        
         var imageSum = $(".image_reel img").length;   
         var imageReelWidth = imageWidth * imageSum;
         $(".image_reel").css({ "width":imageReelWidth});
@@ -54,7 +55,7 @@ $(".paging").show();
                 $active.addClass("active");
                 $(".image_reel").animate({ 
                     left: -pageSize * imageWidth 
-                    }, 1000,function () {
+                    }, 500,function () {
                         $(".image_reel").css({'left':'0px'});
                     }
                 );
@@ -116,7 +117,7 @@ $(".paging").show();
         });
 
         //On hover
-        $(".image_reel a").hover(function() {
+        $(".image_reel img").hover(function() {
             clearInterval(play);    //鼠标移进，停止play方法
         }, function() {
             rotateSwitch();     //  鼠标移走，重新开始rotateSwitch方法
