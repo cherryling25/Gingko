@@ -308,14 +308,34 @@ body{
 .ppt .div3 .menuItemTitle{
     float: left;
     width: 80px;
-    height: 470px;
-    border: 1px solid red;
+    text-align: right;
+}
+
+.ppt .div3 .menuItemTitle h4{
+    font-size: 13px;
 }
 
 .ppt .div3 .menuItemCon{
     float: left;
     width: 280px;
-    border: 1px solid red;
+    padding-left:30px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.ppt .div3 .menuItemCon a{
+    display: inline-block;
+}
+
+.ppt .div3 .menuBottom{
+    width:85px;
+    height: 470px;
+    background:#f2f2f2;
+    float: left;
+    position: absolute;
+}
+.ppt .div3 .menuRight{
+    position: absolute;
+    z-index: 1;
 }
 
 .ppt .right{
@@ -335,7 +355,7 @@ body{
     width: 400px;
     float: left;
     background: #fff;
-    padding: 10px 0 0 10px;
+    position: relative;
 }
 
 .ppt .right .right-left .active{
