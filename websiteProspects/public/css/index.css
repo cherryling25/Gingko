@@ -502,12 +502,62 @@ body{
 }
 .indexTabBoxBottom .indexTabCon{
     width: 910px;
-    margin:0 4px;
+    margin:0 2px;
     padding: 10px 0;
 }
 
-.indexTabBoxBottom .indexTabCon .clearfix{
+.indexTabBoxBottom .indexTabCon ul{
     list-style-type: none;
+}
+
+.indexTabBoxBottom .indexTabCon ul li{
+    float: left;
+    width: 182px;
+    margin-top: 20px;
+}
+
+.indexTabBoxBottom .indexTabPic{
+    position: relative;
+    width: 160px;
+    
+}
+
+.indexTabBoxBottom .Tag{
+    width: 45px;
+    height: 55px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: -22px;
+    color: #fff;
+    background: url("../images/TagBg.png") no-repeat;
+}
+
+.indexTabBoxBottom .Tag span{
+    display: inline-block;
+    width: 43px;
+    height: 28px;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.indexTabBoxBottom .indexTabTit{
+    width: 170px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.indexTabBoxBottom .indexTabTit a{
+    color: #666;
+}
+
+.indexTabBoxBottom .indexTabPrice{
+    color: #c00;
 }
 
 .indexTabRight{
