@@ -5,11 +5,16 @@
 body{
     overflow-x: hidden;
 }
-.top{
-    height: 26px;
+.mycontainer{
+    
     background: #f8f8f8;
     font-size: 13px;
 }
+
+.top{
+    height: 26px;
+}
+
 .main{
     width: 1200px;
     margin:0 auto;
@@ -378,6 +383,9 @@ body{
 }
 
 /*幻灯片设计*/
+.mycarousel {
+    height : 470px;
+}
 .carousel {
     width: 1050px;
     float: right;
@@ -447,3 +455,73 @@ body{
     display: block;
 }
 
+/*content开始*/
+.content{
+    margin-top:10px;
+}
+.contentFirst{
+    height: 500px;
+    width: 1200px;
+}
+.indexTabBox{
+    height: 500px;
+    width: 920px;
+    float: left;
+}
+
+.indexTabBoxTop{
+    height: 38px;
+}
+
+.indexTabBoxTop ul{
+    list-style-type: none;
+}
+
+.indexTabBoxTop ul li{
+    float: left;
+    width: 184px;
+    line-height: 38px;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    background: #f9f9f9;
+    border:1px solid #ececec;
+    border-top:2px solid #ececec;
+}
+
+.indexTabBoxTop ul li:hover{
+    background: #fff;
+    cursor: pointer;
+    color: #c00;
+    border-top-color:#c00;
+}
+
+.indexTabBoxBottom{
+    height: 460px;
+    background: #fff;
+}
+.indexTabBoxBottom .indexTabCon{
+    width: 910px;
+    margin:0 4px;
+    padding: 10px 0;
+}
+
+.indexTabBoxBottom .indexTabCon .clearfix{
+    list-style-type: none;
+}
+
+.indexTabRight{
+    height: 500px;
+    width: 270px;
+    float: right;
+}
+
+.indexTabRightTop{
+    height: 38px;
+    background: rgb(233, 55, 55);
+}
+
+.indexTabRightBottom{
+    height: 460px;
+    background: rgb(112, 205, 228);
+}
