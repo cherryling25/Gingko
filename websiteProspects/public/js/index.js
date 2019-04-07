@@ -119,4 +119,17 @@ $(".paging").show();
         }, function() {
             rotateSwitch();     //  鼠标移走，重新开始rotateSwitch方法
         });
+
+        /*抢购*/
+        $(".indexTabBoxBottom .indexTabCon").first().show();
+        
+        $(".indexTabBoxTop ul li").mouseenter(function(){
+            $(this).addClass("active");
+            $(".indexTabBoxTop ul li").not($(this)).removeClass("active");
+
+            idx = $(this).index(".indexTabBoxTop ul li");
+            $(".indexTabBoxBottom .indexTabCon").eq(idx).show();
+            $(".indexTabBoxBottom .indexTabCon").not($(".indexTabBoxBottom .indexTabCon").eq(idx)).hide();
+        });
+       
 });

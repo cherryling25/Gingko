@@ -489,7 +489,7 @@ body{
     border-top:2px solid #ececec;
 }
 
-.indexTabBoxTop ul li:hover{
+.indexTabBoxTop ul li.active{
     background: #fff;
     cursor: pointer;
     color: #c00;
@@ -504,6 +504,7 @@ body{
     width: 910px;
     margin:0 2px;
     padding: 10px 0;
+    display: none;
 }
 
 .indexTabBoxBottom .indexTabCon ul{
