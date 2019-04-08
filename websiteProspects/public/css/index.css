@@ -514,7 +514,7 @@ body{
 .indexTabBoxBottom .indexTabCon ul li{
     float: left;
     width: 182px;
-    margin-top: 20px;
+    margin-top: 9px;
 }
 
 .indexTabBoxBottom .indexTabPic{
@@ -567,12 +567,125 @@ body{
     float: right;
 }
 
-.indexTabRightTop{
-    height: 38px;
-    background: rgb(233, 55, 55);
+.indexTabRight .indexTabNew{
+    height: 140px;
 }
 
-.indexTabRightBottom{
-    height: 460px;
+.indexTabRight .indexTuanBox{
+    height: 157px;
     background: rgb(112, 205, 228);
+    margin-top: 10px;
+}
+.indexTabRight .indexAdFocus{
+    height: 178px;
+    margin-top: 10px;
+    background: #ccc;
+}
+
+.indexTabRight .indexTabNewNav{
+    height: 38px;
+    text-align: center;
+}
+
+.indexTabRight .indexTabNewNav ul{
+    list-style-type: none;
+}
+
+.indexTabRight .indexTabNewNav ul li{
+    float: left;
+    width: 134px;
+    height: 38px;
+    line-height: 38px;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    background: #f9f9f9;
+    border:1px solid #ececec;
+    border-top:2px solid #ececec;
+}
+
+.indexTabRight .indexTabNewNav ul li.active{
+    background: #fff;
+    cursor: pointer;
+    color: #c00;
+    border-top-color:#c00;
+}
+
+.indexTabRight .indexTabNewCon{
+    height: 105px;
+    background: #fff;
+    display: none;
+}
+
+.indexTabRight .indexTabNewCon ul{
+    list-style-type: none;
+}
+
+.indexTabRight .indexTabNewCon ul li{
+    float: left;
+    width: 114px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    line-height: 28px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.indexTabRight .indexTabNewCon ul li a{
+    color: #666;
+}
+
+.indexTabRight .indexTabNewCon ul li a:hover{
+    text-decoration: underline;
+    color: #c66;
+}
+
+/*右侧上方第一个幻灯片*/
+.indexTuanBox .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 270px;
+    height: 157px;
+}
+
+.indexTuanBox .image_reel {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.indexTuanBox .image_reel img {
+    float: left;
+}
+
+.indexTuanBox .paging {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 100;
+    text-align: center;
+    line-height: 40px;
+    display: none;
+}
+
+.indexTuanBox .paging a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 5px;
+}
+
+.indexTuanBox .paging a:hover {
+    font-weight: bold;
+}
+
+.indexTuanBox .paging a.active {
+    background: #920000;
+    font-weight: bold;
+    border:1px solid #610000;
+    border-radius: 3px;
+
 }
