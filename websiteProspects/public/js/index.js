@@ -150,68 +150,68 @@ $(".mycarousel .paging").show();
 
     	//获取图像的大小,有多少图像，然后确定图像的大小
     	  //调整图像新的大小
-        var imageWidth = $(".indexTuanBox .window").width();
-        var imageSum = $(".indexTuanBox .image_reel img").length;   
-        var imageReelWidth = imageWidth * imageSum;
-        $(".indexTuanBox .image_reel").css({ "width":imageReelWidth});
+        var imageWidtha = $(".indexTuanBox .window").width();
+        var imageSuma = $(".indexTuanBox .image_reel img").length;   
+        var imageReelWidtha = imageWidtha * imageSuma;
+        $(".indexTuanBox .image_reel").css({ "width":imageReelWidtha});
 
-        var pageSize = $(".indexTuanBox .paging a").length;
+        var pageSizea = $(".indexTuanBox .paging a").length;
 
         //分页和滑动
-        rotate = function(end){
+        var rotatea = function(end){
             if(end) {
-                $active = $(".indexTuanBox .paging a:first");
+                $activea = $(".indexTuanBox .paging a:first");
                 $(".indexTuanBox .paging a").removeClass("active");
-                $active.addClass("active");
+                $activea.addClass("active");
                 $(".indexTuanBox .image_reel").animate({ 
-                    left: -pageSize * imageWidth 
+                    left: -pageSizea * imageWidtha 
                     }, 1000,function () {
                         $(".indexTuanBox .image_reel").css({'left':'0px'});
                     }
                 );
                 
             } else {
-                var triggerID = $active.attr("rel")-1;
-                var image_reelPosition = triggerID*imageWidth;
+                var triggerIDa = $activea.attr("rel")-1;
+                var image_reelPositiona = triggerIDa*imageWidtha;
 
                 $(".indexTuanBox .paging a").removeClass("active");   //删除所有active类
-                $active.addClass("active");
+                $activea.addClass("active");
                 
                 $(".indexTuanBox .image_reel").animate({  //滑动动画
-                    left: -image_reelPosition 
+                    left: -image_reelPositiona 
                 }, 500);
             }
         };
 
         //定时时间
-        rotateSwitch = function() {
-            play = setInterval(function() { //这个总过程每隔7秒重复一次
-                $active = $(".indexTuanBox .paging a.active").next(); //移动到下一个分页
-                var rel = $active.attr("rel");
-                var end = false;
-                if(!rel) {
-                    end = true;
+        var rotateSwitcha = function() {
+            playa = setInterval(function() { //这个总过程每隔7秒重复一次
+                $activea = $(".indexTuanBox .paging a.active").next(); //移动到下一个分页
+                var rela = $activea.attr("rel");
+                var enda = false;
+                if(!rela) {
+                    enda = true;
                 }
-                rotate(end);     //触发分页和滑块函数
+                rotatea(enda);     //触发分页和滑块函数
             }, 2000);   //每隔分页停留的定时器速度
         };
 
-        rotateSwitch();
+        rotateSwitcha();
 
         //On Click
         $(".indexTuanBox .paging a").click(function() {
-           $active = $(this);
-           clearInterval(play);     //动画立即停止
-           rotate();        //立即触发rotate函数
-           rotateSwitch();  //重新开始rotateSwitch方法
+           $activea = $(this);
+           clearInterval(playa);     //动画立即停止
+           rotatea();        //立即触发rotate函数
+           rotateSwitcha();  //重新开始rotateSwitch方法
            return false;    //以防定时器是a链接，浏览器会跳转到链接
         });
 
         //On hover
         $(".indexTuanBox .image_reel a").hover(function() {
-            clearInterval(play);    //鼠标移进，停止play方法
+            clearInterval(playa);    //鼠标移进，停止play方法
         }, function() {
-            rotateSwitch();     //  鼠标移走，重新开始rotateSwitch方法
+            rotateSwitcha();     //  鼠标移走，重新开始rotateSwitch方法
         });
    
 });
