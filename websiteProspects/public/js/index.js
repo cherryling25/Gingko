@@ -165,7 +165,7 @@ $(".mycarousel .paging").show();
                 $activea.addClass("active");
                 $(".indexTuanBox .image_reel").animate({ 
                     left: -pageSizea * imageWidtha 
-                    }, 1000,function () {
+                    }, 500,function () {
                         $(".indexTuanBox .image_reel").css({'left':'0px'});
                     }
                 );
